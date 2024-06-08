@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class IDManager : MonoBehaviour
 {
-    public List<ID> correctIdentifcationCards;
+    public List<IDData> correctIdentifcationCards;
     [Header("Lynx")]
     public Material lynxPicture;
     public Material lynxSignature;
@@ -12,8 +12,8 @@ public class IDManager : MonoBehaviour
     public Material leonPicture;
     public Material leonSignature;
     [Header("Pigeon")]
-    public Material pigeonPicture;
-    public Material pigeonSignature;
+    public Material eaglePicture;
+    public Material eagleSignature;
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +28,7 @@ public class IDManager : MonoBehaviour
     }
 }
 [System.Serializable]
-public class ID
+public class IDData
 {
     public string Name;
     public string platoonName;
