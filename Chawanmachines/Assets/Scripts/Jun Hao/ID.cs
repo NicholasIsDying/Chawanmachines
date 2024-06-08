@@ -8,7 +8,7 @@ public class ID : MonoBehaviour
 {
     public new TextMeshProUGUI name;
     public TextMeshProUGUI idNumber;
-    public TextMeshProUGUI PlatoonName;
+    public TextMeshProUGUI expiryDate;
     public GameObject idPicture;
     public GameObject platoonPicture;
 
