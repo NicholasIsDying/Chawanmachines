@@ -20,7 +20,7 @@ public class DialogueLine
 [System.Serializable]
 public class Dialogue
 {
-    public List<DialogueLine> speakerlines;
+    public List<DialogueLine> speakerLines;
 }
 
 [System.Serializable]

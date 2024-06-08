@@ -396,6 +396,38 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2486230040633967820, guid: cb41bf4a056b82049aec00670c83b3a4, type: 3}
+      propertyPath: dialogue.speakerLines.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2486230040633967820, guid: cb41bf4a056b82049aec00670c83b3a4, type: 3}
+      propertyPath: dialogue.speakerlines.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2486230040633967820, guid: cb41bf4a056b82049aec00670c83b3a4, type: 3}
+      propertyPath: dialogue.speakerLines.Array.data[0].content
+      value: Good day to you sir, my name is {name}, and my ID is {id}
+      objectReference: {fileID: 0}
+    - target: {fileID: 2486230040633967820, guid: cb41bf4a056b82049aec00670c83b3a4, type: 3}
+      propertyPath: dialogue.speakerLines.Array.data[1].content
+      value: Good day to you sir, my name is {name}, and my ID is {id}
+      objectReference: {fileID: 0}
+    - target: {fileID: 2486230040633967820, guid: cb41bf4a056b82049aec00670c83b3a4, type: 3}
+      propertyPath: dialogue.speakerLines.Array.data[2].content
+      value: Good day to you sir, my name is {name}, and my ID is {id}
+      objectReference: {fileID: 0}
+    - target: {fileID: 2486230040633967820, guid: cb41bf4a056b82049aec00670c83b3a4, type: 3}
+      propertyPath: dialogue.speakerLines.Array.data[0].character.name
+      value: npc1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2486230040633967820, guid: cb41bf4a056b82049aec00670c83b3a4, type: 3}
+      propertyPath: dialogue.speakerLines.Array.data[1].character.name
+      value: npc2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2486230040633967820, guid: cb41bf4a056b82049aec00670c83b3a4, type: 3}
+      propertyPath: dialogue.speakerLines.Array.data[2].character.name
+      value: npc3
+      objectReference: {fileID: 0}
     - target: {fileID: 4119953411289203317, guid: cb41bf4a056b82049aec00670c83b3a4, type: 3}
       propertyPath: m_Name
       value: Dialogue Canvas

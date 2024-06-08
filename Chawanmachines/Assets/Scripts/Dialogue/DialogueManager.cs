@@ -17,7 +17,7 @@ public class DialogueManager : MonoBehaviour
 
     public bool isDialogueActive = false;
 
-    public float typingSpeed = 0.2f;
+    public float typingSpeed = 0.5f;
 
     //public Animator animator;
 
@@ -48,9 +48,9 @@ public class DialogueManager : MonoBehaviour
         List<string> names = new List<string>(speakerNames.names);
         Dictionary<string, string> namePlaceholders = new Dictionary<string, string>();
 
-        for (int i = 0; i < dialogue.speakerlines.Count; i++)
+        for (int i = 0; i < dialogue.speakerLines.Count; i++)
         {
-            foreach (var placeholder in GetPlaceholders(dialogue.speakerlines[i].content))
+            foreach (var placeholder in GetPlaceholders(dialogue.speakerLines[i].content))
             {
                 if (!namePlaceholders.ContainsKey(placeholder))
                 {
@@ -66,14 +66,14 @@ public class DialogueManager : MonoBehaviour
 
             foreach (var placeholder in namePlaceholders.Keys)
             {
-                dialogue.speakerlines[i].content = dialogue.speakerlines[i].content.Replace(placeholder, namePlaceholders[placeholder]);
+                dialogue.speakerLines[i].content = dialogue.speakerLines[i].content.Replace(placeholder, namePlaceholders[placeholder]);
             }
         }
     }
 
     private void AssignRandomIDs()
     {
-        foreach (var line in dialogue.speakerlines)
+        foreach (var line in dialogue.speakerLines)
         {
             if (line.content.Contains("{id}"))
             {
@@ -113,7 +113,7 @@ public class DialogueManager : MonoBehaviour
 
     private IEnumerator DisplayDialogue()
     {
-        foreach (var dialogueLine in dialogue.speakerlines)
+        foreach (var dialogueLine in dialogue.speakerLines)
         {
             Debug.Log(dialogueLine.content);
             isDialogueActive = true;
@@ -132,7 +132,7 @@ public class DialogueManager : MonoBehaviour
 
         lines.Clear();
 
-        foreach (DialogueLine dialogueLine in dialogue.speakerlines)
+        foreach (DialogueLine dialogueLine in dialogue.speakerLines)
         {
             lines.Enqueue(dialogueLine);
         }
