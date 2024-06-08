@@ -388,6 +388,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2096865073 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4148047837054639752, guid: cb41bf4a056b82049aec00670c83b3a4, type: 3}
+  m_PrefabInstance: {fileID: 1727718019363526396}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64618ba4c8c151443a0c4865f6d01d19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1727718019363526396
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -428,9 +439,69 @@ PrefabInstance:
       propertyPath: dialogue.speakerLines.Array.data[2].character.name
       value: npc3
       objectReference: {fileID: 0}
+    - target: {fileID: 3771914644742469364, guid: cb41bf4a056b82049aec00670c83b3a4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3771914644742469364, guid: cb41bf4a056b82049aec00670c83b3a4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3771914644742469364, guid: cb41bf4a056b82049aec00670c83b3a4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2096865073}
+    - target: {fileID: 3771914644742469364, guid: cb41bf4a056b82049aec00670c83b3a4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3771914644742469364, guid: cb41bf4a056b82049aec00670c83b3a4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DisplayNextDialogueLine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3771914644742469364, guid: cb41bf4a056b82049aec00670c83b3a4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DialogueManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3771914644742469364, guid: cb41bf4a056b82049aec00670c83b3a4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4119953411289203317, guid: cb41bf4a056b82049aec00670c83b3a4, type: 3}
       propertyPath: m_Name
       value: Dialogue Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 4148047837054639752, guid: cb41bf4a056b82049aec00670c83b3a4, type: 3}
+      propertyPath: typingSpeed
+      value: 0.005
+      objectReference: {fileID: 0}
+    - target: {fileID: 4148047837054639752, guid: cb41bf4a056b82049aec00670c83b3a4, type: 3}
+      propertyPath: dialogue.speakerLines.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4148047837054639752, guid: cb41bf4a056b82049aec00670c83b3a4, type: 3}
+      propertyPath: dialogue.speakerLines.Array.data[0].content
+      value: Good day to you sir, my name is {name}, and my ID is {id}
+      objectReference: {fileID: 0}
+    - target: {fileID: 4148047837054639752, guid: cb41bf4a056b82049aec00670c83b3a4, type: 3}
+      propertyPath: dialogue.speakerLines.Array.data[1].content
+      value: Good day to you sir, my name is {name}, and my ID is {id}
+      objectReference: {fileID: 0}
+    - target: {fileID: 4148047837054639752, guid: cb41bf4a056b82049aec00670c83b3a4, type: 3}
+      propertyPath: dialogue.speakerLines.Array.data[2].content
+      value: Good day to you sir, my name is {name}, and my ID is {id}
+      objectReference: {fileID: 0}
+    - target: {fileID: 4148047837054639752, guid: cb41bf4a056b82049aec00670c83b3a4, type: 3}
+      propertyPath: dialogue.speakerLines.Array.data[0].character.name
+      value: npc1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4148047837054639752, guid: cb41bf4a056b82049aec00670c83b3a4, type: 3}
+      propertyPath: dialogue.speakerLines.Array.data[1].character.name
+      value: npc2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4148047837054639752, guid: cb41bf4a056b82049aec00670c83b3a4, type: 3}
+      propertyPath: dialogue.speakerLines.Array.data[2].character.name
+      value: npc3
       objectReference: {fileID: 0}
     - target: {fileID: 4243089564375339692, guid: cb41bf4a056b82049aec00670c83b3a4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

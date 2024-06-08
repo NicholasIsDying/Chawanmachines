@@ -40,6 +40,8 @@ public class DialogueManager : MonoBehaviour
 
     private void Start()
     {
+        AssignRandomNames();
+        AssignRandomIDs();
         StartCoroutine(DisplayDialogue());
     }
 
@@ -75,11 +77,17 @@ public class DialogueManager : MonoBehaviour
     {
         foreach (var line in dialogue.speakerLines)
         {
-            if (line.content.Contains("{id}"))
+            /*if (line.content.Contains("{id}"))
             {
                 string randomID = GenerateRandomID();
                 line.content = line.content.Replace("{id}", randomID);
-            }
+                Debug.Log(line.content);
+            }*/
+
+            string randomID = GenerateRandomID();
+            line.content = line.content.Replace("{id}", randomID);
+            Debug.Log(line.content);
+
         }
     }
 
@@ -113,13 +121,21 @@ public class DialogueManager : MonoBehaviour
 
     private IEnumerator DisplayDialogue()
     {
-        foreach (var dialogueLine in dialogue.speakerLines)
+        /*foreach (var dialogueLine in dialogue.speakerLines)
         {
             Debug.Log(dialogueLine.content);
             isDialogueActive = true;
             lines.Enqueue(dialogueLine);
             yield return new WaitForSeconds(2); // Wait for 2 seconds before showing the next line
+        }*/
+
+        foreach (DialogueLine dialogueLine in dialogue.speakerLines)
+        {
+            lines.Enqueue(dialogueLine);
         }
+
+        DisplayNextDialogueLine();
+        yield return new WaitForSeconds(2);
     }
 
 
@@ -142,6 +158,8 @@ public class DialogueManager : MonoBehaviour
 
     public void DisplayNextDialogueLine()
     {
+        Debug.Log("button pressed");
+
         if (lines.Count == 0)
         {
             EndDialogue();
