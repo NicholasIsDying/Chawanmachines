@@ -124,7 +124,7 @@ public class DialogueManager : MonoBehaviour
 
 
     //play dialogue function
-    /*public void StartDialogue(Dialogue dialogue)
+    public void StartDialogue(Dialogue dialogue)
     {
         isDialogueActive = true;
 
@@ -138,7 +138,7 @@ public class DialogueManager : MonoBehaviour
         }
 
         DisplayNextDialogueLine();
-    }*/
+    }
 
     public void DisplayNextDialogueLine()
     {
