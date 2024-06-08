@@ -25,9 +25,23 @@ public class IDManager : MonoBehaviour
         
     }
 
-    void SetId()
+    public void SetCorrectId(int random)
     {
-        
+        //this all is just to set up the id
+        id.name.text = correctIdentifcationCards[random].Name;
+        id.idNumber.text = correctIdentifcationCards[random].iDNumber;
+        id.idPicture.GetComponent<MeshRenderer>().material = correctIdentifcationCards[random].profilePicture;
+        string platoon = correctIdentifcationCards[random].platoonName;
+        if (platoon == "Lynx")
+        {
+            id.platoonPicture.GetComponent<MeshRenderer>().material = lynxPicture;
+        } else if (platoon == "Eagle")
+        {
+            id.platoonPicture.GetComponent<MeshRenderer>().material = eaglePicture;
+        } else if (platoon == "Leon")
+        {
+            id.platoonPicture.GetComponent<MeshRenderer>().material = leonPicture;
+        }
     }
 
     // Update is called once per frame
@@ -39,8 +53,8 @@ public class IDManager : MonoBehaviour
 [System.Serializable]
 public class IDData
 {
-    public string Name;
-    public string platoonName;
-    public string iDNumber;
-    public Material profilePicture;
+    public string Name;//name of the person
+    public string platoonName;//name of the platoon that the person is in
+    public string iDNumber;//ID number of the person
+    public Material profilePicture;//picture of the person
 }
