@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class IDManager : MonoBehaviour
 {
+    public ID id;
     public List<IDData> correctIdentifcationCards;
     [Header("Lynx")]
     public Material lynxPicture;
@@ -15,8 +16,16 @@ public class IDManager : MonoBehaviour
     public Material eaglePicture;
     public Material eagleSignature;
 
+    [Header("Current Date")]
+    public int Year,month;
+
     // Start is called before the first frame update
     void Start()
+    {
+        
+    }
+
+    void SetId()
     {
         
     }
