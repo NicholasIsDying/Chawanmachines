@@ -11,16 +11,22 @@ public class ID : MonoBehaviour
     public TextMeshProUGUI expiryDate;
     public GameObject idPicture;
     public GameObject platoonPicture;
-
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        
+        Vector3 target = transform.TransformPoint(Vector3.forward * 3);
+        StartCoroutine(animatingID(target));
     }
-
-    // Update is called once per frame
-    void Update()
+    
+    IEnumerator animatingID(Vector3 targetPosition)
     {
-        
+        Vector3 startposition = transform.position;
+        float timeElapsed = 0;
+        while(timeElapsed < 3)
+        {
+            transform.position = Vector3.Lerp(startposition, targetPosition, timeElapsed / 3);
+            timeElapsed += Time.deltaTime;
+            yield return null;
+        }
+        transform.position = targetPosition;
     }
 }

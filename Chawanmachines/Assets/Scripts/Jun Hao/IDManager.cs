@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class IDManager : MonoBehaviour
 {
-    public ID id;
     public List<IDData> correctIdentifcationCards;
     [Header("Lynx")]
     public Material lynxPicture;
@@ -25,7 +24,7 @@ public class IDManager : MonoBehaviour
         
     }
 
-    public void SetCorrectId(int random)
+    public void SetCorrectId(int random, ID id)
     {
         //this all is just to set up the id
         id.name.text = correctIdentifcationCards[random].Name;
@@ -39,6 +38,26 @@ public class IDManager : MonoBehaviour
         {
             id.platoonPicture.GetComponent<MeshRenderer>().material = eaglePicture;
         } else if (platoon == "Leon")
+        {
+            id.platoonPicture.GetComponent<MeshRenderer>().material = leonPicture;
+        }
+    }
+    public void SetWrongId(int random, ID id)
+    {
+        //this all is just to set up the id
+        id.name.text = correctIdentifcationCards[random].Name;
+        id.idNumber.text = correctIdentifcationCards[random].iDNumber;
+        id.idPicture.GetComponent<MeshRenderer>().material = correctIdentifcationCards[random].profilePicture;
+        string platoon = correctIdentifcationCards[random].platoonName;
+        if (platoon == "Lynx")
+        {
+            id.platoonPicture.GetComponent<MeshRenderer>().material = lynxPicture;
+        }
+        else if (platoon == "Eagle")
+        {
+            id.platoonPicture.GetComponent<MeshRenderer>().material = eaglePicture;
+        }
+        else if (platoon == "Leon")
         {
             id.platoonPicture.GetComponent<MeshRenderer>().material = leonPicture;
         }
