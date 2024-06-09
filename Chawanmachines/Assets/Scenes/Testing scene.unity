@@ -505,7 +505,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4148047837054639752, guid: cb41bf4a056b82049aec00670c83b3a4, type: 3}
       propertyPath: dialogue.speakerLines.Array.data[0].content
-      value: Good day to you sir, my name is {name}, and my ID is {id}
+      value: Good day to you sir, my name is {name}, and my ID is [id]
       objectReference: {fileID: 0}
     - target: {fileID: 4148047837054639752, guid: cb41bf4a056b82049aec00670c83b3a4, type: 3}
       propertyPath: dialogue.speakerLines.Array.data[1].content
