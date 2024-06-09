@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -495,6 +495,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dialogue Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 4119953411289203317, guid: cb41bf4a056b82049aec00670c83b3a4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4148047837054639752, guid: cb41bf4a056b82049aec00670c83b3a4, type: 3}
       propertyPath: typingSpeed
       value: 0.005
@@ -509,11 +513,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4148047837054639752, guid: cb41bf4a056b82049aec00670c83b3a4, type: 3}
       propertyPath: dialogue.speakerLines.Array.data[1].content
-      value: Good day to you sir, my name is {name}, and my ID is {id}
+      value: Good day to you sir, my name is {name}, and my ID is [id]
       objectReference: {fileID: 0}
     - target: {fileID: 4148047837054639752, guid: cb41bf4a056b82049aec00670c83b3a4, type: 3}
       propertyPath: dialogue.speakerLines.Array.data[2].content
-      value: Good day to you sir, my name is {name}, and my ID is {id}
+      value: Good day to you sir, my name is {name}, and my ID is [id]
       objectReference: {fileID: 0}
     - target: {fileID: 4148047837054639752, guid: cb41bf4a056b82049aec00670c83b3a4, type: 3}
       propertyPath: dialogue.speakerLines.Array.data[0].character.name

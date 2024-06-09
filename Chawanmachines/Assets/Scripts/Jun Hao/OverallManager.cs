@@ -26,10 +26,10 @@ public class OverallManager : MonoBehaviour
         idManager = FindObjectOfType<IDManager>();
         PeopleInAlready.Clear();
         PeopleInAlready.Add(15);
-        SelectAtRandomPerson();
+        SpawningNextIdEntry();
     }
 
-    void SelectAtRandomPerson()//call this when a new person is supposed to come in 
+    void SpawningNextIdEntry()//call this when a new person is supposed to come in 
     {
         int index = Random.Range(0,4);
         if (index == 3)//25% of it being imposter
@@ -37,9 +37,15 @@ public class OverallManager : MonoBehaviour
             int imposterAs = Random.Range(0, 14);
             Vector3 rotation = new Vector3(ID.transform.rotation.x, spawnIDPosition.rotation.y, ID.transform.rotation.z);
             Quaternion newRotation = Quaternion.Euler(rotation);
+            //spawning id and setting up the id
             GameObject idObject = Instantiate(ID, spawnIDPosition.position, newRotation);
             ID id = idObject.GetComponent<ID>();
             idManager.SetWrongId(imposterAs,id);
+
+            //spawning entry paper and setting up the entry
+            GameObject entryObject = Instantiate(Entry, spawnEntryPosition.position, newRotation);
+            EntryPaper entry = entryObject.GetComponent<EntryPaper>();
+            idManager.SetWrongEntry(imposterAs, entry);
         }
         else
         {
@@ -49,12 +55,18 @@ public class OverallManager : MonoBehaviour
                 person = Random.Range(0, 14);
             }
             PeopleInAlready.Add(person);
+
+            //setting up the id 
             Vector3 rotation = new Vector3(ID.transform.rotation.x, spawnIDPosition.rotation.y, ID.transform.rotation.z);
             Quaternion newRotation = Quaternion.Euler(rotation);
             GameObject idObject = Instantiate(ID, spawnIDPosition.position, newRotation);
             ID id = idObject.GetComponent<ID>();
             idManager.SetCorrectId(person,id);
-            
+
+            //seting up the entry paper
+            GameObject entryObject = Instantiate(Entry, spawnEntryPosition.position, newRotation);
+            EntryPaper entry = entryObject.GetComponent<EntryPaper>();
+            idManager.SetCorrectEntry(person, entry);
         }
     } 
 }

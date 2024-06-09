@@ -77,12 +77,13 @@ public class DialogueManager : MonoBehaviour
 
     private void AssignRandomIDs()
     {
+        print("yes");
         List<string> ids = new List<string>(presetIDs.ids);
         Dictionary<string, string> idPlaceholders = new Dictionary<string, string>();
 
         for (int i = 0; i < dialogue.speakerLines.Count; i++)
         {
-            foreach (var placeholder in GetPlaceholders(dialogue.speakerLines[i].content))
+            foreach (var placeholder in GetIdPlaceholders(dialogue.speakerLines[i].content))
             {
                 if (!idPlaceholders.ContainsKey(placeholder))
                 {
@@ -149,9 +150,14 @@ public class DialogueManager : MonoBehaviour
                 break;
             }
         }
-        
-        
-        startIndex = 0;
+
+        return placeholders;
+    }
+
+    private IEnumerable<string> GetIdPlaceholders(string content)
+    {
+        var placeholders = new List<string>();
+        int startIndex = 0;
 
         while ((startIndex = content.IndexOf('[', startIndex)) != -1)
         {
