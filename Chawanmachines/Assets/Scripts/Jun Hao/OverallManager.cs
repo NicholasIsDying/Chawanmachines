@@ -9,7 +9,9 @@ public class OverallManager : MonoBehaviour
     public static OverallManager Instance;
     public List<int> PeopleInAlready=new List<int>();
     public GameObject ID;
-    public Transform spawnPosition;
+    public GameObject Entry;
+    public Transform spawnIDPosition;
+    public Transform spawnEntryPosition;
 
     private void Awake()
     {
@@ -24,18 +26,18 @@ public class OverallManager : MonoBehaviour
         idManager = FindObjectOfType<IDManager>();
         PeopleInAlready.Clear();
         PeopleInAlready.Add(15);
-        selectAtRandomPerson();
+        SelectAtRandomPerson();
     }
 
-    void selectAtRandomPerson()//call this when a new person is supposed to come in 
+    void SelectAtRandomPerson()//call this when a new person is supposed to come in 
     {
         int index = Random.Range(0,4);
         if (index == 3)//25% of it being imposter
         {
             int imposterAs = Random.Range(0, 14);
-            Vector3 rotation = new Vector3(ID.transform.rotation.x, spawnPosition.rotation.y, ID.transform.rotation.z);
+            Vector3 rotation = new Vector3(ID.transform.rotation.x, spawnIDPosition.rotation.y, ID.transform.rotation.z);
             Quaternion newRotation = Quaternion.Euler(rotation);
-            GameObject idObject = Instantiate(ID, spawnPosition.position, newRotation);
+            GameObject idObject = Instantiate(ID, spawnIDPosition.position, newRotation);
             ID id = idObject.GetComponent<ID>();
             idManager.SetWrongId(imposterAs,id);
         }
@@ -47,9 +49,9 @@ public class OverallManager : MonoBehaviour
                 person = Random.Range(0, 14);
             }
             PeopleInAlready.Add(person);
-            Vector3 rotation = new Vector3(ID.transform.rotation.x, spawnPosition.rotation.y, ID.transform.rotation.z);
+            Vector3 rotation = new Vector3(ID.transform.rotation.x, spawnIDPosition.rotation.y, ID.transform.rotation.z);
             Quaternion newRotation = Quaternion.Euler(rotation);
-            GameObject idObject = Instantiate(ID, spawnPosition.position, newRotation);
+            GameObject idObject = Instantiate(ID, spawnIDPosition.position, newRotation);
             ID id = idObject.GetComponent<ID>();
             idManager.SetCorrectId(person,id);
             

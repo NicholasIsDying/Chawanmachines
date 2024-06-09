@@ -1,0 +1,115 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2555371518632908918
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9015706849441458964}
+  - component: {fileID: 6333358049839774069}
+  m_Layer: 0
+  m_Name: Idmanager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9015706849441458964
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2555371518632908918}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6333358049839774069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2555371518632908918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 336f4008f22590249b0c05e60f3bc757, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  correctIdentifcationCards:
+  - Name: Leroy Jethro
+    platoonName: Lynx
+    iDNumber: 109245
+    profilePicture: {fileID: 2100000, guid: 87b09c87a85e5e640892ad871e96ed57, type: 2}
+  - Name: R1n MithriL
+    platoonName: Lynx
+    iDNumber: 983552
+    profilePicture: {fileID: 2100000, guid: 604650d01f61fc24cbd23304fcaad16f, type: 2}
+  - Name: Eugene Tan
+    platoonName: Lynx
+    iDNumber: 237954
+    profilePicture: {fileID: 2100000, guid: f5d3b56dc4ccb5249b2dd893043b0c3d, type: 2}
+  - Name: A1ko Zir
+    platoonName: Lynx
+    iDNumber: 154267
+    profilePicture: {fileID: 2100000, guid: de80489f74fc8624db36652a8d6ea487, type: 2}
+  - Name: Endy Mineon
+    platoonName: Lynx
+    iDNumber: 307456
+    profilePicture: {fileID: 2100000, guid: ff35f2d3da958b74cb0e77835f1932cb, type: 2}
+  - Name: Chase H1ll
+    platoonName: Eagle
+    iDNumber: 204886
+    profilePicture: {fileID: 0}
+  - Name: Rochen Ethens
+    platoonName: Eagle
+    iDNumber: 046965
+    profilePicture: {fileID: 0}
+  - Name: Yuri Lock
+    platoonName: Eagle
+    iDNumber: 188946
+    profilePicture: {fileID: 0}
+  - Name: K00ner T4nner
+    platoonName: Eagle
+    iDNumber: 205875
+    profilePicture: {fileID: 0}
+  - Name: Iki Fenrir
+    platoonName: Eagle
+    iDNumber: 773953
+    profilePicture: {fileID: 0}
+  - Name: B1p0 Tycan
+    platoonName: Eagle
+    iDNumber: 599803
+    profilePicture: {fileID: 0}
+  - Name: Ryan Logan
+    platoonName: Leon
+    iDNumber: 470061
+    profilePicture: {fileID: 0}
+  - Name: Emir Redd
+    platoonName: Leon
+    iDNumber: 659102
+    profilePicture: {fileID: 0}
+  - Name: W4lter Mar5h
+    platoonName: Leon
+    iDNumber: 890334
+    profilePicture: {fileID: 0}
+  - Name: Ernesto Yuth
+    platoonName: Leon
+    iDNumber: 395461
+    profilePicture: {fileID: 0}
+  lynxPicture: {fileID: 2100000, guid: 39e70a32c64376e46ad024c32729ca57, type: 2}
+  lynxSignature: {fileID: 2100000, guid: b4c3d0a5eb0d14a44b23789102ad4b73, type: 2}
+  leonPicture: {fileID: 2100000, guid: 8a5824045559acc4ab9e041c51871a26, type: 2}
+  leonSignature: {fileID: 2100000, guid: d81d30af2c2851f468c84b8deffd2401, type: 2}
+  eaglePicture: {fileID: 2100000, guid: 2857fc88fe13aa4479dd87a5febbed3d, type: 2}
+  eagleSignature: {fileID: 2100000, guid: f7018ea37578f4045b3f1b4c5f2bc5ae, type: 2}
+  Year: 0
+  month: 0

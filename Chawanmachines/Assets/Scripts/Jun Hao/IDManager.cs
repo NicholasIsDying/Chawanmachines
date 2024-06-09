@@ -63,10 +63,14 @@ public class IDManager : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SetCorrectEntry()
     {
-        
+
+    }
+
+    public void SetWrongEntry()
+    {
+
     }
 }
 [System.Serializable]
