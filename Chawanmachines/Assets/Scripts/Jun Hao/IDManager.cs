@@ -23,6 +23,8 @@ public class IDManager : MonoBehaviour
     public bool isThereMistakeOnName=false;
     public string idOfTheIndividual;
     public bool isThereMistakeOnId = false;
+    public bool isEntryWrong = false;
+    public bool isImposter = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -50,6 +52,16 @@ public class IDManager : MonoBehaviour
         {
             id.platoonPicture.GetComponent<MeshRenderer>().material = leonPicture;
         }
+        int year = Random.Range(2066, 2071);
+        if(year == 2066)
+        {
+            int month = Random.Range(5, 13);
+        }
+        else
+        {
+            int month = Random.Range(1, 13);
+        }
+        id.expiryDate.text = month.ToString() + "/" + year.ToString();
     }
     public void SetWrongId(int random, ID id)
     {
@@ -74,9 +86,20 @@ public class IDManager : MonoBehaviour
         {
             id.platoonPicture.GetComponent<MeshRenderer>().material = leonPicture;
         }
+        int year = Random.Range(2066, 2071);
+        if (year == 2066)
+        {
+            int month = Random.Range(5, 13);
+        }
+        else
+        {
+            int month = Random.Range(1, 13);
+        }
+        id.expiryDate.text = month.ToString() + "/" + year.ToString();
+
 
         //this is to set up the errors
-        int amountOfErrors = Random.Range(1, 5);
+        int amountOfErrors = Random.Range(1, 6);
         List<int> index = new List<int>();
         for(int i = 0; i < amountOfErrors; i++)
         {
@@ -84,20 +107,22 @@ public class IDManager : MonoBehaviour
         }
         while (amountOfErrors > 0)
         {
-            index[amountOfErrors] = noReptitionLoop(index,4);
-            if (index[amountOfErrors] == 0)
+            index[amountOfErrors-1] = noReptitionLoop(index,5);
+            if (index[amountOfErrors-1] == 0)
             {
                 id.name.text = correctIdentifcationCards[NotRandom(random,15)].Name;
+                isThereMistakeOnName = true;
             }
-            else if (index[amountOfErrors] == 1)
+            else if (index[amountOfErrors-1] == 1)
             {
                 id.idNumber.text = correctIdentifcationCards[NotRandom(random, 15)].iDNumber;
+                isThereMistakeOnId = true;
             }
-            else if (index[amountOfErrors] == 2)
+            else if (index[amountOfErrors-1] == 2)
             {
                 id.idPicture.GetComponent<MeshRenderer>().material = correctIdentifcationCards[NotRandom(random, 15)].profilePicture;
             }
-            else if (index[amountOfErrors] == 3)
+            else if (index[amountOfErrors-1] == 3)
             {
                 platoon = correctIdentifcationCards[NotRandom(random, 15)].platoonName;
                 if (platoon == "Lynx")
@@ -112,6 +137,18 @@ public class IDManager : MonoBehaviour
                 {
                     id.platoonPicture.GetComponent<MeshRenderer>().material = leonPicture;
                 }
+            }else if(index[amountOfErrors-1] == 4)
+            {
+                year = Random.Range(2061, 2067);
+                if (year == 2066)
+                {
+                    month = Random.Range(1,4);
+                }
+                else
+                {
+                    month = Random.Range(1, 13);
+                }
+                id.expiryDate.text = month.ToString() + "/" + year.ToString();
             }
             amountOfErrors -= 1;
         }
@@ -137,8 +174,7 @@ public class IDManager : MonoBehaviour
 
     public void SetCorrectEntry(int random, EntryPaper entry)
     {
-        isThereMistakeOnName = false;
-        isThereMistakeOnId = false;
+        isEntryWrong = false;
         entry.nameOfTheIndividual.text = correctIdentifcationCards[random].Name;
         entry.idNumber.text = correctIdentifcationCards[random].iDNumber;        
         string platoon = correctIdentifcationCards[random].platoonName;
@@ -157,9 +193,10 @@ public class IDManager : MonoBehaviour
     }
 
     public void SetWrongEntry(int impostingAs, EntryPaper entry)
-    {
+    {        
         SetCorrectEntry(impostingAs, entry);
-        int amountOfErrors = Random.Range(1, 5);
+        isEntryWrong = true;
+        int amountOfErrors = Random.Range(1, 4);
         List<int> index = new List<int>();
         for (int i = 0; i < amountOfErrors; i++)
         {
@@ -167,15 +204,16 @@ public class IDManager : MonoBehaviour
         }
         while (amountOfErrors > 0)
         {
-            index[amountOfErrors] = noReptitionLoop(index,3);
-            if (index[amountOfErrors] == 0)
+            index[amountOfErrors-1] = noReptitionLoop(index,3);
+            if (index[amountOfErrors-1] == 0)
             {
                 entry.nameOfTheIndividual.text = correctIdentifcationCards[NotRandom(impostingAs,15)].Name;
-            }else if(index[amountOfErrors] == 1)
+            }
+            else if(index[amountOfErrors-1] == 1)
             {
                 entry.idNumber.text = correctIdentifcationCards[NotRandom(impostingAs, 15)].iDNumber;
             }
-            else if (index[amountOfErrors] == 2)
+            else if (index[amountOfErrors-1] == 2)
             {
                 string platoon = correctIdentifcationCards[NotRandom(impostingAs, 15)].platoonName;
                 entry.platoonName.text = platoon;

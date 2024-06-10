@@ -11,7 +11,7 @@ public class EntryPaper : MonoBehaviour
     public GameObject signature;
     private void Start()
     {
-        Vector3 target = transform.TransformPoint(Vector3.forward * 3);
+        Vector3 target = transform.TransformPoint(Vector3.forward * 0.5f);
         StartCoroutine(animatingID(target));
     }
 
@@ -19,9 +19,9 @@ public class EntryPaper : MonoBehaviour
     {
         Vector3 startposition = transform.position;
         float timeElapsed = 0;
-        while (timeElapsed < 3)
+        while (timeElapsed < 0.1f)
         {
-            transform.position = Vector3.Lerp(startposition, targetPosition, timeElapsed / 3);
+            transform.position = Vector3.Lerp(startposition, targetPosition, timeElapsed / 0.1f);
             timeElapsed += Time.deltaTime;
             yield return null;
         }

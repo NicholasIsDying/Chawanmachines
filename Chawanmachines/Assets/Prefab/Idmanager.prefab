@@ -68,31 +68,31 @@ MonoBehaviour:
   - Name: Chase H1ll
     platoonName: Eagle
     iDNumber: 204886
-    profilePicture: {fileID: 0}
+    profilePicture: {fileID: 2100000, guid: dd9e114da825350478fecd80edb9cac9, type: 2}
   - Name: Rochen Ethens
     platoonName: Eagle
     iDNumber: 046965
-    profilePicture: {fileID: 0}
+    profilePicture: {fileID: 2100000, guid: 7530bef916014f04c9803064cfcbce0f, type: 2}
   - Name: Yuri Lock
     platoonName: Eagle
     iDNumber: 188946
-    profilePicture: {fileID: 0}
-  - Name: K00ner T4nner
+    profilePicture: {fileID: 2100000, guid: 32eade9ce4f74f04ba92a535969ea80e, type: 2}
+  - Name: K1eth T4nner
     platoonName: Eagle
     iDNumber: 205875
-    profilePicture: {fileID: 0}
+    profilePicture: {fileID: 2100000, guid: 5a26c53b71f6ae24b93bbbab4ea5acb4, type: 2}
   - Name: Iki Fenrir
     platoonName: Eagle
     iDNumber: 773953
-    profilePicture: {fileID: 0}
+    profilePicture: {fileID: 2100000, guid: 9e30d0ed2b7eb334f92841de853462ef, type: 2}
   - Name: B1p0 Tycan
     platoonName: Eagle
     iDNumber: 599803
-    profilePicture: {fileID: 0}
+    profilePicture: {fileID: 2100000, guid: a12ea2f6e00623944811e2b03569a1bf, type: 2}
   - Name: Ryan Logan
     platoonName: Leon
     iDNumber: 470061
-    profilePicture: {fileID: 0}
+    profilePicture: {fileID: 2100000, guid: 41ae342261ee8b44382abceb27332879, type: 2}
   - Name: Emir Redd
     platoonName: Leon
     iDNumber: 659102
@@ -113,3 +113,9 @@ MonoBehaviour:
   eagleSignature: {fileID: 2100000, guid: f7018ea37578f4045b3f1b4c5f2bc5ae, type: 2}
   Year: 0
   month: 0
+  nameOfIndividual: 
+  isThereMistakeOnName: 0
+  idOfTheIndividual: 
+  isThereMistakeOnId: 0
+  isEntryWrong: 0
+  isImposter: 0

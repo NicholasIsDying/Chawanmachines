@@ -108,8 +108,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa3b52581e0cbd04eb161c4d63760fe6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueManager: {fileID: 0}
   PeopleInAlready: 
-  ID: {fileID: 0}
-  Entry: {fileID: 0}
+  ID: {fileID: 1091724548945958635, guid: 6e7789e2061844445bcec8dc648d1c43, type: 3}
+  Entry: {fileID: 7964266873998950556, guid: 4f5a0712d3fad9d469c0f554e58f8390, type: 3}
   spawnIDPosition: {fileID: 6325189661216561450}
   spawnEntryPosition: {fileID: 9126692704098422878}

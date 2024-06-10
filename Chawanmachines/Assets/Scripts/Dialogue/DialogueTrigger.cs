@@ -62,6 +62,8 @@ public class DialogueTrigger : MonoBehaviour
     public Dialogue[] entryCorrect;
     public Dialogue[] entryWrong;
 
+    public Dialogue[] idRegardless;
+
     private void Start()
     {
         IdManager = FindObjectOfType<IDManager>();
@@ -69,31 +71,51 @@ public class DialogueTrigger : MonoBehaviour
 
     public void FirstDialogue()
     {
-        int indexe = Random.Range(0, 3);
+        int indexe = Random.Range(0, firstDialogue.Length);
         DialogueManager.Instance.StartDialogue(firstDialogue[indexe]);
     }
     public void IntroDialogue()
     {
         DialogueManager.Instance.StartDialogue(introductionDIalogue);
     }
-    public void ID()
+    public void ID()//the npc will say out the name that he is supposed to be imposting as
     {
         if (IdManager.isThereMistakeOnId == false)
         {
-
-        }else if(IdManager.isThereMistakeOnId == true)
+            int indexe = Random.Range(0, correctId.Length);
+            DialogueManager.Instance.StartDialogue(correctId[indexe]);
+        }
+        else if(IdManager.isThereMistakeOnId == true)
         {
-
+            int indexe = Random.Range(0, wrongId.Length);
+            DialogueManager.Instance.StartDialogue(wrongId[indexe]);
         }
     }
 
     public void Name()
     {
-
+        if (IdManager.isThereMistakeOnName == false)//no mistake
+        {
+            int indexe = Random.Range(0, correctName.Length);
+            DialogueManager.Instance.StartDialogue(correctName[indexe]);
+        }else if (IdManager.isThereMistakeOnName == true)//have mistakes
+        {
+            int indexe = Random.Range(0, wrongName.Length);
+            DialogueManager.Instance.StartDialogue(wrongName[indexe]);
+        }
     }
 
     public void EntryLog()
     {
-
+        if (IdManager.isEntryWrong == true)
+        {
+            int indexe = Random.Range(0, entryWrong.Length);
+            DialogueManager.Instance.StartDialogue(entryWrong[indexe]);
+        }
+        else if(IdManager.isEntryWrong == false)
+        {
+            int indexe = Random.Range(0, entryCorrect.Length);
+            DialogueManager.Instance.StartDialogue(entryCorrect[indexe]);
+        }
     }
 }

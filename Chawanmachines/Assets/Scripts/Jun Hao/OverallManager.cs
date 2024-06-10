@@ -35,39 +35,73 @@ public class OverallManager : MonoBehaviour
         int index = Random.Range(0,4);
         if (index == 3)//25% of it being imposter
         {
+            idManager.isImposter = true;
             int imposterAs = Random.Range(0, 14);
-            Vector3 rotation = new Vector3(ID.transform.rotation.x, spawnIDPosition.rotation.y, ID.transform.rotation.z);
-            Quaternion newRotation = Quaternion.Euler(rotation);
-            //spawning id and setting up the id
-            GameObject idObject = Instantiate(ID, spawnIDPosition.position, newRotation);
-            ID id = idObject.GetComponent<ID>();
-            idManager.SetWrongId(imposterAs,id);
+            print(spawnIDPosition.rotation.z);            
+            Quaternion newRotation = Quaternion.Euler(ID.transform.eulerAngles.x, spawnIDPosition.eulerAngles.y, ID.transform.eulerAngles.z);
 
-            //spawning entry paper and setting up the entry
-            GameObject entryObject = Instantiate(Entry, spawnEntryPosition.position, newRotation);
-            EntryPaper entry = entryObject.GetComponent<EntryPaper>();
-            idManager.SetWrongEntry(imposterAs, entry);
+            int chance = Random.Range(0, 3);
+            //if it is 1 then only the id has the error, if it is 2 then only the entry has the error, if chance is 2 then both have errors
+            if (chance == 1)
+            {
+                //spawning id and setting up the id
+                GameObject idObject = Instantiate(ID, spawnIDPosition.position, newRotation);
+                ID id = idObject.GetComponent<ID>();
+                idManager.SetWrongId(imposterAs, id);
+                 newRotation = Quaternion.Euler(Entry.transform.eulerAngles.x, spawnIDPosition.eulerAngles.y, Entry.transform.eulerAngles.z);
+                GameObject entryObject = Instantiate(Entry, spawnEntryPosition.position, newRotation);
+                EntryPaper entry = entryObject.GetComponent<EntryPaper>();
+                idManager.SetCorrectEntry(imposterAs, entry);
+
+            }
+            else if (chance == 0)
+            {
+                GameObject idObject = Instantiate(ID, spawnIDPosition.position, newRotation);
+                ID id = idObject.GetComponent<ID>();
+                idManager.SetCorrectId(imposterAs, id);
+                
+                newRotation = Quaternion.Euler(Entry.transform.eulerAngles.x, spawnIDPosition.eulerAngles.y, Entry.transform.eulerAngles.z);
+                //spawning entry paper and setting up the entry
+                GameObject entryObject = Instantiate(Entry, spawnEntryPosition.position, newRotation);
+                EntryPaper entry = entryObject.GetComponent<EntryPaper>();
+                idManager.SetWrongEntry(imposterAs, entry);
+            }
+            else if (chance == 2)
+            {
+                //spawning id and setting up the id
+                GameObject idObject = Instantiate(ID, spawnIDPosition.position, newRotation);
+                ID id = idObject.GetComponent<ID>();
+                idManager.SetWrongId(imposterAs, id);
+                newRotation = Quaternion.Euler(Entry.transform.eulerAngles.x, spawnIDPosition.eulerAngles.y, Entry.transform.eulerAngles.z);
+                //spawning entry paper and setting up the entry
+                GameObject entryObject = Instantiate(Entry, spawnEntryPosition.position, newRotation);
+                EntryPaper entry = entryObject.GetComponent<EntryPaper>();
+                idManager.SetWrongEntry(imposterAs, entry);
+            }
         }
-        else
+        else//this is the not imposter
         {
-            int person = 0;
+            idManager.isImposter = true;
+            int person = 0;//person is the index
             while (PeopleInAlready.Contains(person))//will randomly
             {
                 person = Random.Range(0, 14);
             }
             PeopleInAlready.Add(person);
+            print(ID.transform.rotation.z);
 
-            //setting up the id 
-            Vector3 rotation = new Vector3(ID.transform.rotation.x, spawnIDPosition.rotation.y, ID.transform.rotation.z);
-            Quaternion newRotation = Quaternion.Euler(rotation);
+            Quaternion newRotation = Quaternion.Euler(ID.transform.eulerAngles.x, spawnIDPosition.eulerAngles.y, ID.transform.eulerAngles.z);
+            //setting up the id             
             GameObject idObject = Instantiate(ID, spawnIDPosition.position, newRotation);
             ID id = idObject.GetComponent<ID>();
-            idManager.SetCorrectId(person,id);
-
+            idManager.SetCorrectId(person, id);
+            newRotation = Quaternion.Euler(Entry.transform.eulerAngles.x, spawnIDPosition.eulerAngles.y, Entry.transform.eulerAngles.z);
             //seting up the entry paper
             GameObject entryObject = Instantiate(Entry, spawnEntryPosition.position, newRotation);
             EntryPaper entry = entryObject.GetComponent<EntryPaper>();
             idManager.SetCorrectEntry(person, entry);
+
+
         }
     } 
 }
