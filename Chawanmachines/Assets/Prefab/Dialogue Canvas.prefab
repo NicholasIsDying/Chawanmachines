@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4264468766632498339}
   - component: {fileID: 4243089564375339692}
   m_Layer: 5
-  m_Name: Trigger
+  m_Name: Intro trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -123,7 +123,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2486230040633967820}
         m_TargetAssemblyTypeName: DialogueTrigger, Assembly-CSharp
-        m_MethodName: TriggerDialogue
+        m_MethodName: FirstDialogue
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -387,7 +387,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3183443303582527362}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4148047837054639752}
+        m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
+        m_MethodName: DisplayNextDialogueLine
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3051962612558707588
 GameObject:
   m_ObjectHideFlags: 0
@@ -497,7 +509,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -330, y: -67}
+  m_AnchoredPosition: {x: -330, y: -28}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6999408858285467574
@@ -628,7 +640,6 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 913067418356058904}
   - {fileID: 7430837108491906429}
   - {fileID: 3098774786780911862}
   - {fileID: 1840594489141116918}
@@ -704,81 +715,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!1 &4502337670734177044
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 913067418356058904}
-  - component: {fileID: 6134826517476307269}
-  - component: {fileID: 1640471524298668451}
-  m_Layer: 5
-  m_Name: Player
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &913067418356058904
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4502337670734177044}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6053716894150701242}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -233, y: 61}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &6134826517476307269
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4502337670734177044}
-  m_CullTransparentMesh: 1
---- !u!114 &1640471524298668451
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4502337670734177044}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &5223744764004025181
 GameObject:
   m_ObjectHideFlags: 0
@@ -957,8 +893,82 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6793baa2355ea1940a545bdfe9ac0208, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue:
-    speakerLines: []
+  firstDialogue:
+  - speakerLines:
+    - content: "\u201CGood day to you, sir.\u201D"
+  - speakerLines:
+    - content: "\u201CThese are my documents, sir.\u201D"
+  - speakerLines:
+    - content: "\u201CHello sir.\u201D \r"
+  introductionDIalogue:
+    speakerLines:
+    - content: "\u201CMy name is <name>, ID [ID].\u201D"
+  correctName:
+  - speakerLines:
+    - content: "\u201CMy name is {correct name}, sir.\u201D"
+  - speakerLines:
+    - content: "\u201CUm, <correct name> sir.\u201D"
+  - speakerLines:
+    - content: "\u201C{correct name}, sir. Is there something wrong with my documents?"
+  wrongName:
+  - speakerLines:
+    - content: "\u201CMy name is {off/wrong name}, sir\u201D "
+  - speakerLines:
+    - content: "\u201CIt\u2019s as the document says.\u201D \r\n"
+  - speakerLines:
+    - content: "\u201C{Correct name}, sir. Hurry up, I am late for a  meeting I have
+        with the commander.\u201D"
+  correctId:
+  - speakerLines:
+    - content: "\u201C[] sir.\u201D"
+  - speakerLines:
+    - content: "\u201CI\u2019m pretty sure it\u2019s [].\u201D"
+  - speakerLines:
+    - content: "\u201C[] sir! I remember it by heart.\u201D \r"
+  wrongId:
+  - speakerLines:
+    - content: "\u201C[wrong ID], sir\u201D "
+  - speakerLines:
+    - content: "\u201CI\u2019m terrible with numbers, but I\u2019m pretty sure what
+        I said was right!\u201D"
+  - speakerLines:
+    - content: "\u201CI\u2019m terrible with numbers\u2026[correct ID number] ?\u201D"
+  - speakerLines:
+    - content: "\u201CThe document is correct. Hurry up.\u201D"
+  entryCorrect:
+  - speakerLines:
+    - content: "\u201CI am from my assigned platoon and my officer signed this! \""
+  - speakerLines:
+    - content: "\u201CCheck again. There is nothing wrong with it.\u201D\r\n"
+  - speakerLines:
+    - content: "\u201CIs there anything wrong with it?\u201D \r\n"
+  - speakerLines:
+    - content: "\u201CI had to leave base due to a family emergency.\u201D "
+  entryWrong:
+  - speakerLines:
+    - content: "\u201CI am from my assigned platoon and my officer signed this!\""
+  - speakerLines:
+    - content: "\u201CI left the base in a hurry and asked the nearest officer to
+        sign it.\u201D "
+  - speakerLines:
+    - content: "\u201CCheck again. There is nothing wrong with it.\u201D \r"
+  idRegardless:
+  - speakerLines:
+    - content: "\u201CIt should be correct, sir.\u201D"
+  - speakerLines:
+    - content: "\u201CIt\u2019s the real deal sir.\u201D"
+  - speakerLines:
+    - content: "\u201CI get the NEXUS thing that\u2019s going about, but you\u2019ve
+        seen me before!\u201D"
+  - speakerLines:
+    - content: "\u201CIt\u2019s as the ID says.\u201D \r"
+  - speakerLines:
+    - content: "\u201CMy ID was properly issued. Check again.\u201D \r"
+  - speakerLines:
+    - content: "\u201CWhy are you asking? There shouldn\u2019t be any mistakes.\u201D
+        \r"
+  - speakerLines:
+    - content: "\u201CI always use this ID\u2026\u201D"
 --- !u!1 &7142748799049667944
 GameObject:
   m_ObjectHideFlags: 0
@@ -1003,13 +1013,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64618ba4c8c151443a0c4865f6d01d19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterIcon: {fileID: 1640471524298668451}
-  characterName: {fileID: 7586741833992384746}
   dialogueArea: {fileID: 4840105890678477105}
   isDialogueActive: 0
-  typingSpeed: 0.2
+  typingSpeed: 0.005
   dialogue:
-    speakerLines: []
+    speakerLines:
+    - content: Good day to you sir, my name is {name}, and my ID is [id]
+    - content: Good day to you sir, my name is {name}, and my ID is {id}
+    - content: Good day to you sir, my name is {name}, and my ID is {id}
   speakerNames:
     names:
     - Leroy Jethro
@@ -1024,140 +1035,6 @@ MonoBehaviour:
     - 237954
     - 154267
     - 307456
---- !u!1 &7560619406358186346
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7955552006391443340}
-  - component: {fileID: 5206185919947565625}
-  - component: {fileID: 7586741833992384746}
-  m_Layer: 5
-  m_Name: Name text
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &7955552006391443340
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7560619406358186346}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 5322327819847440147}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -300, y: -19}
-  m_SizeDelta: {x: 200, y: 50}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &5206185919947565625
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7560619406358186346}
-  m_CullTransparentMesh: 1
---- !u!114 &7586741833992384746
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7560619406358186346}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_text: New Text
-  m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
-  m_fontMaterial: {fileID: 0}
-  m_fontMaterials: []
-  m_fontColor32:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
-  m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
-  m_tintAllSprites: 0
-  m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
-  m_overrideHtmlColors: 0
-  m_faceColor:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
-  m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 65535
-  m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
-  m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
-  m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
-  m_linkedTextComponent: {fileID: 0}
-  parentLinkedComponent: {fileID: 0}
-  m_enableKerning: 1
-  m_enableExtraPadding: 0
-  checkPaddingRequired: 0
-  m_isRichText: 1
-  m_parseCtrlCharacters: 1
-  m_isOrthographic: 1
-  m_isCullingEnabled: 0
-  m_horizontalMapping: 0
-  m_verticalMapping: 0
-  m_uvLineOffset: 0
-  m_geometrySortingOrder: 0
-  m_IsTextObjectScaleStatic: 0
-  m_VertexBufferAutoSizeReduction: 0
-  m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -223.18402, w: 13.006897}
-  m_isUsingLegacyAnimationComponent: 0
-  m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_baseMaterial: {fileID: 0}
-  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &8529301842462508925
 GameObject:
   m_ObjectHideFlags: 0
@@ -1187,7 +1064,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5343258615203566496}
-  - {fileID: 7955552006391443340}
   - {fileID: 5680385503814582485}
   m_Father: {fileID: 6053716894150701242}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
