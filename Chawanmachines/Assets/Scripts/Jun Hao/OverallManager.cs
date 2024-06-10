@@ -6,12 +6,14 @@ public class OverallManager : MonoBehaviour
 {
     
     IDManager idManager;
+    public DialogueManager dialogueManager;
     public static OverallManager Instance;
     public List<int> PeopleInAlready=new List<int>();
     public GameObject ID;
     public GameObject Entry;
     public Transform spawnIDPosition;
     public Transform spawnEntryPosition;
+
 
     private void Awake()
     {
@@ -25,7 +27,6 @@ public class OverallManager : MonoBehaviour
     {
         idManager = FindObjectOfType<IDManager>();
         PeopleInAlready.Clear();
-        PeopleInAlready.Add(15);
         SpawningNextIdEntry();
     }
 
@@ -49,8 +50,8 @@ public class OverallManager : MonoBehaviour
         }
         else
         {
-            int person = 15;//the inital value have to be outside the range from 0-14 and already part of the list so at start it will add 15 to the list
-            while (PeopleInAlready.Contains(person))
+            int person = 0;
+            while (PeopleInAlready.Contains(person))//will randomly
             {
                 person = Random.Range(0, 14);
             }

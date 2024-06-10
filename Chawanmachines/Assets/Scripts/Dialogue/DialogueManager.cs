@@ -8,12 +8,10 @@ using TMPro;
 public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager Instance;
-
-    public Image characterIcon;
-    public TextMeshProUGUI characterName;
+    IDManager idmanager;
     public TextMeshProUGUI dialogueArea;
 
-    private Queue<DialogueLine> lines;
+    public Queue<DialogueLine> lines;
 
     public bool isDialogueActive = false;
 
@@ -40,6 +38,7 @@ public class DialogueManager : MonoBehaviour
 
     private void Start()
     {
+        idmanager = FindObjectOfType<IDManager>();
         AssignRandomNames();
         AssignRandomIDs();
         StartCoroutine(DisplayDialogue());
@@ -89,7 +88,7 @@ public class DialogueManager : MonoBehaviour
                 {
                     if (ids.Count == 0)
                     {
-                        ids = new List<string>(speakerNames.names); // Refill the list if we run out of unique names
+                        ids = new List<string>(speakerNames.names); // Refill the list if we run out of unique names....why
                     }
                     int randomIndex = Random.Range(0, ids.Count);
                     idPlaceholders[placeholder] = ids[randomIndex];
@@ -226,9 +225,7 @@ public class DialogueManager : MonoBehaviour
         }
 
         DialogueLine currentLine = lines.Dequeue();
-
-        characterIcon.sprite = currentLine.character.icon;
-        characterName.text = currentLine.character.name;
+        
 
         StopAllCoroutines();
 
