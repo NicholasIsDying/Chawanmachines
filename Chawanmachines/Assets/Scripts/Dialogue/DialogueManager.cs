@@ -39,12 +39,12 @@ public class DialogueManager : MonoBehaviour
     private void Start()
     {
         idmanager = FindObjectOfType<IDManager>();
-        AssignRandomNames();
+        /*AssignRandomNames();
         AssignRandomIDs();
-        StartCoroutine(DisplayDialogue());
+        StartCoroutine(DisplayDialogue());*/
     }
 
-    private void AssignRandomNames()
+    private void ReplaceName(Dialogue dialogue)
     {
         List<string> names = new List<string>(speakerNames.names);
         Dictionary<string, string> namePlaceholders = new Dictionary<string, string>();
@@ -74,7 +74,7 @@ public class DialogueManager : MonoBehaviour
     }
 
 
-    private void AssignRandomIDs()
+    private void ReplaceIDs(Dialogue dialogue)
     {
         print("yes");
         List<string> ids = new List<string>(presetIDs.ids);
@@ -177,7 +177,7 @@ public class DialogueManager : MonoBehaviour
         return placeholders;
     }
 
-    private IEnumerator DisplayDialogue()
+    /*private IEnumerator DisplayDialogue()
     {
         /*foreach (var dialogueLine in dialogue.speakerLines)
         {
@@ -185,8 +185,7 @@ public class DialogueManager : MonoBehaviour
             isDialogueActive = true;
             lines.Enqueue(dialogueLine);
             yield return new WaitForSeconds(2); // Wait for 2 seconds before showing the next line
-        }*/
-
+        }
         foreach (DialogueLine dialogueLine in dialogue.speakerLines)
         {
             lines.Enqueue(dialogueLine);
@@ -194,7 +193,7 @@ public class DialogueManager : MonoBehaviour
 
         DisplayNextDialogueLine();
         yield return new WaitForSeconds(2);
-    }
+    }*/
 
 
     //play dialogue function
@@ -206,11 +205,16 @@ public class DialogueManager : MonoBehaviour
 
         lines.Clear();
 
-        foreach (DialogueLine dialogueLine in dialogue.speakerLines)
+        Dialogue temp = dialogue.Copy();
+
+        ReplaceIDs(temp);
+        ReplaceName(temp);
+
+
+        foreach (DialogueLine dialogueLine in temp.speakerLines)
         {
             lines.Enqueue(dialogueLine);
         }
-
         DisplayNextDialogueLine();
     }
 

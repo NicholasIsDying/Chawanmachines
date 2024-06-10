@@ -18,6 +18,11 @@ public class IDManager : MonoBehaviour
     [Header("Current Date")]
     public int Year,month;
 
+    [Header("Id details")]
+    public string nameOfIndividual;
+    public bool isThereMistakeOnName=false;
+    public string idOfTheIndividual;
+    public bool isThereMistakeOnId = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,9 +31,13 @@ public class IDManager : MonoBehaviour
 
     public void SetCorrectId(int random, ID id)
     {
+        isThereMistakeOnName = false;
+        isThereMistakeOnId = false;
         //this all is just to set up the id
         id.name.text = correctIdentifcationCards[random].Name;
+        nameOfIndividual = correctIdentifcationCards[random].Name;
         id.idNumber.text = correctIdentifcationCards[random].iDNumber;
+        idOfTheIndividual= correctIdentifcationCards[random].iDNumber;
         id.idPicture.GetComponent<MeshRenderer>().material = correctIdentifcationCards[random].profilePicture;
         string platoon = correctIdentifcationCards[random].platoonName;
         if (platoon == "Lynx")
@@ -44,10 +53,13 @@ public class IDManager : MonoBehaviour
     }
     public void SetWrongId(int random, ID id)
     {
-
-        //this all is just to set up the id
+        isThereMistakeOnName = false;
+        isThereMistakeOnId = false;
+        //this all is just to set up the "Correct" id
         id.name.text = correctIdentifcationCards[random].Name;
+        name = correctIdentifcationCards[random].Name;
         id.idNumber.text = correctIdentifcationCards[random].iDNumber;
+        idOfTheIndividual = correctIdentifcationCards[random].iDNumber;
         id.idPicture.GetComponent<MeshRenderer>().material = correctIdentifcationCards[random].profilePicture;
         string platoon = correctIdentifcationCards[random].platoonName;
         if (platoon == "Lynx")
@@ -63,9 +75,13 @@ public class IDManager : MonoBehaviour
             id.platoonPicture.GetComponent<MeshRenderer>().material = leonPicture;
         }
 
-        
+        //this is to set up the errors
         int amountOfErrors = Random.Range(1, 5);
-        List<int> index = new List<int>(amountOfErrors);
+        List<int> index = new List<int>();
+        for(int i = 0; i < amountOfErrors; i++)
+        {
+            index.Add(0);
+        }
         while (amountOfErrors > 0)
         {
             index[amountOfErrors] = noReptitionLoop(index,4);
@@ -121,6 +137,8 @@ public class IDManager : MonoBehaviour
 
     public void SetCorrectEntry(int random, EntryPaper entry)
     {
+        isThereMistakeOnName = false;
+        isThereMistakeOnId = false;
         entry.nameOfTheIndividual.text = correctIdentifcationCards[random].Name;
         entry.idNumber.text = correctIdentifcationCards[random].iDNumber;        
         string platoon = correctIdentifcationCards[random].platoonName;
@@ -142,7 +160,11 @@ public class IDManager : MonoBehaviour
     {
         SetCorrectEntry(impostingAs, entry);
         int amountOfErrors = Random.Range(1, 5);
-        List<int> index = new List<int>(amountOfErrors);
+        List<int> index = new List<int>();
+        for (int i = 0; i < amountOfErrors; i++)
+        {
+            index.Add(0);
+        }
         while (amountOfErrors > 0)
         {
             index[amountOfErrors] = noReptitionLoop(index,3);
