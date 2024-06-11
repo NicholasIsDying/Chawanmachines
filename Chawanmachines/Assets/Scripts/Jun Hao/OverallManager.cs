@@ -30,6 +30,11 @@ public class OverallManager : MonoBehaviour
         SpawningNextIdEntry();
     }
 
+    public void SpawnPerson()
+    {
+
+    }
+
     void SpawningNextIdEntry()//call this when a new person is supposed to come in 
     {
         int index = Random.Range(0,4);

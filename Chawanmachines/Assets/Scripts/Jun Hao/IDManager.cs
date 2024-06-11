@@ -26,6 +26,9 @@ public class IDManager : MonoBehaviour
     public bool isEntryWrong = false;
     public bool isImposter = false;
     public int characterIndex;
+
+    [Header("Destination")]
+    public Transform finalDestination;
     // Start is called before the first frame update
     void Start()
     {
