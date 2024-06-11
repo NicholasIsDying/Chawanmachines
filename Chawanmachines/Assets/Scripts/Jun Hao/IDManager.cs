@@ -25,6 +25,7 @@ public class IDManager : MonoBehaviour
     public bool isThereMistakeOnId = false;
     public bool isEntryWrong = false;
     public bool isImposter = false;
+    public int characterIndex;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +34,7 @@ public class IDManager : MonoBehaviour
 
     public void SetCorrectId(int random, ID id)
     {
+        characterIndex = random;
         isThereMistakeOnName = false;
         isThereMistakeOnId = false;
         //this all is just to set up the id
@@ -53,18 +55,20 @@ public class IDManager : MonoBehaviour
             id.platoonPicture.GetComponent<MeshRenderer>().material = leonPicture;
         }
         int year = Random.Range(2066, 2071);
-        if(year == 2066)
+        int monthOfId= Random.Range(5, 13);
+        if (year == 2066)
         {
-            int month = Random.Range(5, 13);
+             monthOfId = Random.Range(5, 13);
         }
         else
         {
-            int month = Random.Range(1, 13);
+             monthOfId = Random.Range(1, 13);
         }
-        id.expiryDate.text = month.ToString() + "/" + year.ToString();
+        id.expiryDate.text = monthOfId.ToString() + "/" + year.ToString();
     }
     public void SetWrongId(int random, ID id)
     {
+        characterIndex = random;
         isThereMistakeOnName = false;
         isThereMistakeOnId = false;
         //this all is just to set up the "Correct" id
@@ -87,15 +91,16 @@ public class IDManager : MonoBehaviour
             id.platoonPicture.GetComponent<MeshRenderer>().material = leonPicture;
         }
         int year = Random.Range(2066, 2071);
+        int monthOfId = Random.Range(5, 13);
         if (year == 2066)
         {
-            int month = Random.Range(5, 13);
+            monthOfId = Random.Range(5, 13);
         }
         else
         {
-            int month = Random.Range(1, 13);
+            monthOfId = Random.Range(1, 13);
         }
-        id.expiryDate.text = month.ToString() + "/" + year.ToString();
+        id.expiryDate.text = monthOfId.ToString() + "/" + year.ToString();
 
 
         //this is to set up the errors
@@ -147,13 +152,14 @@ public class IDManager : MonoBehaviour
                 year = Random.Range(2061, 2067);
                 if (year == 2066)
                 {
-                    month = Random.Range(1,4);
+                    monthOfId = Random.Range(1,4);
                 }
                 else
                 {
-                    month = Random.Range(1, 13);
+                    monthOfId = Random.Range(1, 13);
                 }
-                id.expiryDate.text = month.ToString() + "/" + year.ToString();
+                
+                id.expiryDate.text = monthOfId.ToString() + "/" + year.ToString();
             }
             amountOfErrors -= 1;
         }
@@ -179,6 +185,7 @@ public class IDManager : MonoBehaviour
 
     public void SetCorrectEntry(int random, EntryPaper entry)
     {
+        characterIndex = random;
         isEntryWrong = false;
         entry.nameOfTheIndividual.text = correctIdentifcationCards[random].Name;
         entry.idNumber.text = correctIdentifcationCards[random].iDNumber;        

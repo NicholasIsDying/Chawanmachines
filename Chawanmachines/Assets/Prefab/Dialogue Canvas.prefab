@@ -902,12 +902,12 @@ MonoBehaviour:
     - content: "\u201CHello sir.\u201D \r"
   introductionDIalogue:
     speakerLines:
-    - content: "\u201CMy name is <name>, ID [ID].\u201D"
+    - content: "\u201CMy name is {name}, ID [ID].\u201D"
   correctName:
   - speakerLines:
     - content: "\u201CMy name is {correct name}, sir.\u201D"
   - speakerLines:
-    - content: "\u201CUm, <correct name> sir.\u201D"
+    - content: "\u201CUm, {correct name} sir.\u201D"
   - speakerLines:
     - content: "\u201C{correct name}, sir. Is there something wrong with my documents?"
   wrongName:
@@ -1016,6 +1016,8 @@ MonoBehaviour:
   dialogueArea: {fileID: 4840105890678477105}
   isDialogueActive: 0
   typingSpeed: 0.005
+  dialogueBox: {fileID: 0}
+  continueBox: {fileID: 0}
   dialogue:
     speakerLines:
     - content: Good day to you sir, my name is {name}, and my ID is [id]

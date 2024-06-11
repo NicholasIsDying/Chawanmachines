@@ -1729,6 +1729,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dialogue Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 4148047837054639752, guid: cb41bf4a056b82049aec00670c83b3a4, type: 3}
+      propertyPath: continueBox
+      value: 
+      objectReference: {fileID: 2261328741654094197}
+    - target: {fileID: 4148047837054639752, guid: cb41bf4a056b82049aec00670c83b3a4, type: 3}
+      propertyPath: dialogueBox
+      value: 
+      objectReference: {fileID: 9109577854029563295}
     - target: {fileID: 6053716894150701242, guid: cb41bf4a056b82049aec00670c83b3a4, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1830,6 +1838,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb41bf4a056b82049aec00670c83b3a4, type: 3}
+--- !u!1 &2261328741654094197 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1681048398512186263, guid: cb41bf4a056b82049aec00670c83b3a4, type: 3}
+  m_PrefabInstance: {fileID: 591539587057353442}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &3077452860930524718 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2486230040633967820, guid: cb41bf4a056b82049aec00670c83b3a4, type: 3}
@@ -1844,6 +1857,11 @@ MonoBehaviour:
 --- !u!224 &6644653804815954520 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6053716894150701242, guid: cb41bf4a056b82049aec00670c83b3a4, type: 3}
+  m_PrefabInstance: {fileID: 591539587057353442}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &9109577854029563295 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8529301842462508925, guid: cb41bf4a056b82049aec00670c83b3a4, type: 3}
   m_PrefabInstance: {fileID: 591539587057353442}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7823246051980680267
