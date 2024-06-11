@@ -3591,6 +3591,14 @@ PrefabInstance:
       propertyPath: finalDestination
       value: 
       objectReference: {fileID: 17275052}
+    - target: {fileID: 6333358049839774069, guid: 07b51d3897291454aa8158067837bec1, type: 3}
+      propertyPath: correctIdentifcationCards.Array.data[13].profilePicture
+      value: 
+      objectReference: {fileID: 2100000, guid: 714d1157c124fe64f978c23575faa2bf, type: 2}
+    - target: {fileID: 6333358049839774069, guid: 07b51d3897291454aa8158067837bec1, type: 3}
+      propertyPath: correctIdentifcationCards.Array.data[14].profilePicture
+      value: 
+      objectReference: {fileID: 2100000, guid: a8996ca495ff1224dbc7f9a178bc6e99, type: 2}
     - target: {fileID: 9015706849441458964, guid: 07b51d3897291454aa8158067837bec1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

@@ -19,7 +19,7 @@ public class OverallManager : MonoBehaviour
     [Header("Npc")]
     public GameObject npc;
     GameObject currentNpc;
-    public int numberNpc=15;
+    public int numberNpc=3;
 
     [Header("Destination")]
     public Transform initalDestination;
