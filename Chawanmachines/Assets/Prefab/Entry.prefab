@@ -778,7 +778,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.5609299, y: 0.0009999983, z: 0.753732}
-  m_Center: {x: 0.010464981, y: 0.018, z: -0.015298277}
+  m_Center: {x: 0.010464981, y: 0.009, z: -0.015298277}
 --- !u!54 &4028005024666688949
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -940,7 +940,7 @@ MonoBehaviour:
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 2
+  m_MovementType: 1
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1

@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class NPCController : MonoBehaviour
 {
-
+    DialogueTrigger dialogueTrigger;
+    OverallManager overallManager;
+     
     [SerializeField] public GameObject NPC;
     [SerializeField] public GameObject Destination;
     public GameObject Camera;
@@ -22,6 +24,9 @@ public class NPCController : MonoBehaviour
     private void Start()
     {
         Camera = GameObject.FindGameObjectWithTag("MainCamera");
+        dialogueTrigger = FindObjectOfType<DialogueTrigger>();
+        overallManager = FindObjectOfType<OverallManager>();
+        
         StartTrigger();
     }
 
@@ -45,7 +50,7 @@ public class NPCController : MonoBehaviour
 
     }
 
-    void StartTrigger()
+    public void StartTrigger()
     {
         animator.SetBool("StopWalking", false);
         animator.SetBool("StartWalking", true);
@@ -67,6 +72,8 @@ public class NPCController : MonoBehaviour
             animator.SetBool("StopWalking", true);
             StartWalking = false;
             StopWalking = true;
+            overallManager.SpawningNextIdEntry();
+            dialogueTrigger.FirstDialogue();
         }
     }
 }

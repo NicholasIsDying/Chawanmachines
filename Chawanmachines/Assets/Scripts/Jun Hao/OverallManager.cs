@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.SceneManagement;
 
 public class OverallManager : MonoBehaviour
 {
@@ -24,6 +26,13 @@ public class OverallManager : MonoBehaviour
     public GameObject secondDestination;
     public GameObject finalDestination;
 
+    [Header("Ending")]
+    public GameObject endingScreen;
+    public TextMeshProUGUI killCount  ;
+    public int killCounter=0;
+    public TextMeshProUGUI letThroughCount;
+    public int letThroughCounter = 0;
+
     private void Awake()
     {
         
@@ -34,9 +43,11 @@ public class OverallManager : MonoBehaviour
 
     private void Start()
     {
-        idManager = FindObjectOfType<IDManager>();
+        killCounter =0; 
+        letThroughCounter = 0;
+         idManager = FindObjectOfType<IDManager>();
         PeopleInAlready.Clear();
-        SpawningNextIdEntry();
+        SpawnPerson();
     }
 
     public void SpawnPerson()
@@ -49,15 +60,52 @@ public class OverallManager : MonoBehaviour
     public void KillNpc()
     {
         Destroy(currentNpc);
+        if (idManager.isImposter)
+        {
+            killCounter += 1;
+        }
+        if (numberNpc != 0)
+        {
+            SpawnPerson();
+        }
+        else
+        {
+            EndGame();
+        }
     }
 
     public void LetNpcPass()
     {
         currentNpc.GetComponent<NPCController>().Destination = finalDestination;
+        currentNpc.GetComponent<NPCController>().StartTrigger(); 
         Destroy(currentNpc, 5f);
+        if (idManager.isImposter)
+        {
+            letThroughCounter += 1;
+        }
+        if (numberNpc != 0)
+        {
+            SpawnPerson();
+        }
+        else
+        {
+            EndGame();
+        }
     }
 
-    void SpawningNextIdEntry()//call this when a new person is supposed to come in 
+    void EndGame()
+    {
+        killCount.text = killCounter.ToString();
+        letThroughCount.text = letThroughCounter.ToString();
+        endingScreen.SetActive(true);
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene("Game");
+    }
+
+    public void SpawningNextIdEntry()//call this when a new person is supposed to come in 
     {
         int index = Random.Range(0,4);
         if (index==3)//25% of it being imposter
