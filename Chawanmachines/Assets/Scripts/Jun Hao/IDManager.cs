@@ -124,7 +124,12 @@ public class IDManager : MonoBehaviour
             }
             else if (index[amountOfErrors-1] == 3)
             {
+                string supposedPlatoon = correctIdentifcationCards[random].platoonName;
                 platoon = correctIdentifcationCards[NotRandom(random, 15)].platoonName;
+                while (supposedPlatoon == platoon)
+                {
+                    platoon = correctIdentifcationCards[NotRandom(random, 15)].platoonName;
+                }
                 if (platoon == "Lynx")
                 {
                     id.platoonPicture.GetComponent<MeshRenderer>().material = lynxPicture;
@@ -216,6 +221,11 @@ public class IDManager : MonoBehaviour
             else if (index[amountOfErrors-1] == 2)
             {
                 string platoon = correctIdentifcationCards[NotRandom(impostingAs, 15)].platoonName;
+                string supposedPlatoon= correctIdentifcationCards[impostingAs].platoonName;
+                while (supposedPlatoon==platoon)
+                {
+                    supposedPlatoon = correctIdentifcationCards[impostingAs].platoonName;
+                }
                 entry.platoonName.text = platoon;
                 if (platoon == "Lynx")
                 {

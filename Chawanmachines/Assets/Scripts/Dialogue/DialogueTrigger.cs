@@ -118,4 +118,10 @@ public class DialogueTrigger : MonoBehaviour
             DialogueManager.Instance.StartDialogue(entryCorrect[indexe]);
         }
     }
+
+    public void IdRegardless()
+    {
+        int indexe = Random.Range(0, idRegardless.Length);
+        DialogueManager.Instance.StartDialogue(idRegardless[indexe]);
+    }
 }

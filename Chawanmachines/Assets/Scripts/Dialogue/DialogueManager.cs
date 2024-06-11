@@ -17,6 +17,9 @@ public class DialogueManager : MonoBehaviour
 
     public float typingSpeed = 0.5f;
 
+    public GameObject dialogueBox;
+    public GameObject continueBox;
+
     //public Animator animator;
 
     private void Awake()
@@ -46,7 +49,6 @@ public class DialogueManager : MonoBehaviour
 
     private void ReplaceName(Dialogue dialogue)
     {
-        List<string> names = new List<string>(speakerNames.names);
         Dictionary<string, string> namePlaceholders = new Dictionary<string, string>();
 
         for (int i = 0; i < dialogue.speakerLines.Count; i++)
@@ -55,13 +57,7 @@ public class DialogueManager : MonoBehaviour
             {
                 if (!namePlaceholders.ContainsKey(placeholder))
                 {
-                    if (names.Count == 0)
-                    {
-                        names = new List<string>(speakerNames.names); // Refill the list if we run out of unique names
-                    }
-                    int randomIndex = Random.Range(0, names.Count);
-                    namePlaceholders[placeholder] = names[randomIndex];
-                    names.RemoveAt(randomIndex);
+                    namePlaceholders[placeholder] = idmanager.nameOfIndividual;
                 }
             }
 
@@ -77,7 +73,6 @@ public class DialogueManager : MonoBehaviour
     private void ReplaceIDs(Dialogue dialogue)
     {
         print("yes");
-        List<string> ids = new List<string>(presetIDs.ids);
         Dictionary<string, string> idPlaceholders = new Dictionary<string, string>();
 
         for (int i = 0; i < dialogue.speakerLines.Count; i++)
@@ -86,13 +81,8 @@ public class DialogueManager : MonoBehaviour
             {
                 if (!idPlaceholders.ContainsKey(placeholder))
                 {
-                    if (ids.Count == 0)
-                    {
-                        ids = new List<string>(speakerNames.names); // Refill the list if we run out of unique names....why
-                    }
-                    int randomIndex = Random.Range(0, ids.Count);
-                    idPlaceholders[placeholder] = ids[randomIndex];
-                    ids.RemoveAt(randomIndex);
+
+                    idPlaceholders[placeholder] = idmanager.idOfTheIndividual;
                 }
             }
 
@@ -200,7 +190,8 @@ public class DialogueManager : MonoBehaviour
     public void StartDialogue(Dialogue dialogue)
     {
         isDialogueActive = true;
-
+        dialogueBox.SetActive(true);
+        continueBox.SetActive(true);
         //animator.Play("show");
 
         lines.Clear();
@@ -248,6 +239,8 @@ public class DialogueManager : MonoBehaviour
 
     void EndDialogue()
     {
+        dialogueBox.SetActive(false);
+        continueBox.SetActive(false);
         isDialogueActive = false;
         //animator.Play("hide");
     }
