@@ -14,7 +14,12 @@ public class book : MonoBehaviour
     private void Start()
     {
         InitialState();
+        transform.parent.localRotation = Quaternion.identity;
+    }
 
+    private void Update()
+    {
+        
     }
 
     public void InitialState()
@@ -23,13 +28,14 @@ public class book : MonoBehaviour
         pages[0].SetAsLastSibling();
         backButton.SetActive(false);
 
+
     }
 
     public void RotateForward()
     {
         if (rotate == true) { return; }
         index++;
-        float angle = 270; //in order to rotate the page forward, you need to set the rotation by 180 degrees around the y axis
+        float angle = -180; //in order to rotate the page forward, you need to set the rotation by 180 degrees around the y axis
         ForwardButtonActions();
         pages[index].SetAsLastSibling();
         StartCoroutine(Rotate(angle, true));
@@ -51,7 +57,7 @@ public class book : MonoBehaviour
     public void RotateBack()
     {
         if (rotate == true) { return; }
-        float angle =90; //in order to rotate the page back, you need to set the rotation to 0 degrees around the y axis
+        float angle = 0; //in order to rotate the page back, you need to set the rotation to 0 degrees around the y axis
         pages[index].SetAsLastSibling();
         BackButtonActions();
         StartCoroutine(Rotate(angle, false));
@@ -77,7 +83,7 @@ public class book : MonoBehaviour
             rotate = true;
             Quaternion targetRotation = Quaternion.Euler(0, angle, 0);
             value += Time.deltaTime * pageSpeed;
-            pages[index].rotation = Quaternion.Slerp(pages[index].transform.localRotation, targetRotation, value); //smoothly turn the page
+            pages[index].transform.localRotation = Quaternion.Slerp(pages[index].transform.localRotation, targetRotation, value); //smoothly turn the page
             float angle1 = Quaternion.Angle(pages[index].transform.localRotation, targetRotation); //calculate the angle between the given angle of rotation and the current angle of rotation
             
             if (angle1 < 0.1f)
