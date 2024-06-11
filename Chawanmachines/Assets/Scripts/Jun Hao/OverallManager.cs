@@ -33,11 +33,10 @@ public class OverallManager : MonoBehaviour
     void SpawningNextIdEntry()//call this when a new person is supposed to come in 
     {
         int index = Random.Range(0,4);
-        if (index == 3)//25% of it being imposter
+        if (index> 1)//25% of it being imposter
         {
             idManager.isImposter = true;
-            int imposterAs = Random.Range(0, 14);
-            print(spawnIDPosition.rotation.z);            
+            int imposterAs = Random.Range(0, 14);      
             Quaternion newRotation = Quaternion.Euler(ID.transform.eulerAngles.x, spawnIDPosition.eulerAngles.y, ID.transform.eulerAngles.z);
 
             int chance = Random.Range(0, 3);
@@ -81,14 +80,13 @@ public class OverallManager : MonoBehaviour
         }
         else//this is the not imposter
         {
-            idManager.isImposter = true;
-            int person = 0;//person is the index
+            idManager.isImposter = false;
+            int person = Random.Range(0, 14);
             while (PeopleInAlready.Contains(person))//will randomly
             {
                 person = Random.Range(0, 14);
             }
             PeopleInAlready.Add(person);
-            print(ID.transform.rotation.z);
 
             Quaternion newRotation = Quaternion.Euler(ID.transform.eulerAngles.x, spawnIDPosition.eulerAngles.y, ID.transform.eulerAngles.z);
             //setting up the id             

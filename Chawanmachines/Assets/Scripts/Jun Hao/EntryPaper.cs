@@ -11,7 +11,7 @@ public class EntryPaper : MonoBehaviour
     public GameObject signature;
     private void Start()
     {
-        Vector3 target = transform.TransformPoint(Vector3.forward * 0.5f);
+        Vector3 target = transform.TransformPoint(Vector3.forward * 0.5f/transform.localScale.z);
         StartCoroutine(animatingID(target));
     }
 
