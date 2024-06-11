@@ -76,8 +76,9 @@ public class book : MonoBehaviour
             rotate = true;
             Quaternion targetRotation = Quaternion.Euler(0, angle, 0);
             value += Time.deltaTime * pageSpeed;
-            pages[index].rotation = Quaternion.Slerp(pages[index].rotation, targetRotation, value); //smoothly turn the page
-            float angle1 = Quaternion.Angle(pages[index].rotation, targetRotation); //calculate the angle between the given angle of rotation and the current angle of rotation
+            pages[index].rotation = Quaternion.Slerp(pages[index].transform.localRotation, targetRotation, value); //smoothly turn the page
+            float angle1 = Quaternion.Angle(pages[index].transform.localRotation, targetRotation); //calculate the angle between the given angle of rotation and the current angle of rotation
+            
             if (angle1 < 0.1f)
             {
                 if (forward == false)
