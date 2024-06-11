@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Start Trigger
   - End Trigger
+  - ID
+  - Entry
   layers:
   - Default
   - TransparentFX

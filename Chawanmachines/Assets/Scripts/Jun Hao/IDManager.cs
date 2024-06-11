@@ -11,7 +11,7 @@ public class IDManager : MonoBehaviour
     [Header("Leon")]
     public Material leonPicture;
     public Material leonSignature;
-    [Header("Pigeon")]
+    [Header("Eagle")]
     public Material eaglePicture;
     public Material eagleSignature;
 
