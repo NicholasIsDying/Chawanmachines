@@ -17,6 +17,7 @@ public class OverallManager : MonoBehaviour
     [Header("Npc")]
     public GameObject npc;
     GameObject currentNpc;
+    public int numberNpc=15;
 
     [Header("Destination")]
     public Transform initalDestination;
@@ -40,6 +41,7 @@ public class OverallManager : MonoBehaviour
 
     public void SpawnPerson()
     {
+        numberNpc -= 1;
         currentNpc = Instantiate(npc, initalDestination.position, Quaternion.identity);
         currentNpc.GetComponent<NPCController>().Destination = secondDestination;
     }

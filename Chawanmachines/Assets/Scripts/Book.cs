@@ -18,10 +18,7 @@ public class book : MonoBehaviour
 
     public void InitialState()
     {
-        for (int i = 0; i < pages.Count; i++)
-        {
-            pages[i].transform.rotation = Quaternion.identity;
-        }
+
         pages[0].SetAsLastSibling();
         backButton.SetActive(false);
 
@@ -31,7 +28,7 @@ public class book : MonoBehaviour
     {
         if (rotate == true) { return; }
         index++;
-        float angle = 180; //in order to rotate the page forward, you need to set the rotation by 180 degrees around the y axis
+        float angle = 270; //in order to rotate the page forward, you need to set the rotation by 180 degrees around the y axis
         ForwardButtonActions();
         pages[index].SetAsLastSibling();
         StartCoroutine(Rotate(angle, true));
@@ -53,7 +50,7 @@ public class book : MonoBehaviour
     public void RotateBack()
     {
         if (rotate == true) { return; }
-        float angle = 0; //in order to rotate the page back, you need to set the rotation to 0 degrees around the y axis
+        float angle =90; //in order to rotate the page back, you need to set the rotation to 0 degrees around the y axis
         pages[index].SetAsLastSibling();
         BackButtonActions();
         StartCoroutine(Rotate(angle, false));
