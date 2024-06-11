@@ -14,6 +14,14 @@ public class OverallManager : MonoBehaviour
     public Transform spawnIDPosition;
     public Transform spawnEntryPosition;
 
+    [Header("Npc")]
+    public GameObject npc;
+    GameObject currentNpc;
+
+    [Header("Destination")]
+    public Transform initalDestination;
+    public GameObject secondDestination;
+    public GameObject finalDestination;
 
     private void Awake()
     {
@@ -32,13 +40,25 @@ public class OverallManager : MonoBehaviour
 
     public void SpawnPerson()
     {
+        currentNpc = Instantiate(npc, initalDestination.position, Quaternion.identity);
+        currentNpc.GetComponent<NPCController>().Destination = secondDestination;
+    }
 
+    public void KillNpc()
+    {
+        Destroy(currentNpc);
+    }
+
+    public void LetNpcPass()
+    {
+        currentNpc.GetComponent<NPCController>().Destination = finalDestination;
+        Destroy(currentNpc, 5f);
     }
 
     void SpawningNextIdEntry()//call this when a new person is supposed to come in 
     {
         int index = Random.Range(0,4);
-        if (index> 1)//25% of it being imposter
+        if (index==3)//25% of it being imposter
         {
             idManager.isImposter = true;
             int imposterAs = Random.Range(0, 14);      
@@ -99,6 +119,7 @@ public class OverallManager : MonoBehaviour
             ID id = idObject.GetComponent<ID>();
             idManager.SetCorrectId(person, id);
             newRotation = Quaternion.Euler(Entry.transform.eulerAngles.x, spawnIDPosition.eulerAngles.y, Entry.transform.eulerAngles.z);
+
             //seting up the entry paper
             GameObject entryObject = Instantiate(Entry, spawnEntryPosition.position, newRotation);
             EntryPaper entry = entryObject.GetComponent<EntryPaper>();

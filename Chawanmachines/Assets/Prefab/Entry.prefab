@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1948461352153896457
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2135835480803535490}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2135835480803535490
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1948461352153896457}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.6427876, z: 0.7660445, w: -0}
+  m_LocalPosition: {x: 0, y: 0, z: 0.3096}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2549033247612743140}
+  m_LocalEulerAnglesHint: {x: -260, y: 180, z: 0}
 --- !u!1 &2146085787672530098
 GameObject:
   m_ObjectHideFlags: 0
@@ -172,7 +203,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: -180}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.007, y: 0}
+  m_AnchoredPosition: {x: -0.007, y: 0.0221}
   m_SizeDelta: {x: 0.56, y: 0.75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &2740860559344422227
@@ -708,6 +739,7 @@ Transform:
   m_Children:
   - {fileID: 6835021674256119831}
   - {fileID: 351705200224809022}
+  - {fileID: 2135835480803535490}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7229502273305312437
@@ -900,7 +932,7 @@ MonoBehaviour:
   m_OnDeactivate:
     m_PersistentCalls:
       m_Calls: []
-  m_AttachTransform: {fileID: 0}
+  m_AttachTransform: {fileID: 2135835480803535490}
   m_SecondaryAttachTransform: {fileID: 0}
   m_UseDynamicAttach: 0
   m_MatchAttachPosition: 1
@@ -1014,7 +1046,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 912f0db83556ee0488ce041a282277cb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.0311
+      value: -0.009
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 912f0db83556ee0488ce041a282277cb, type: 3}
       propertyPath: m_LocalPosition.z
