@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Monitor : MonoBehaviour
 {
-    public GameObject[] monitorPages;
+    [SerializeField] GameObject[] monitorPages = new GameObject[8];
     int monitorMaterialIndex;
 
     // Start is called before the first frame update
@@ -18,12 +18,14 @@ public class Monitor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Debug.Log("Material Index" + monitorMaterialIndex);
+        if (monitorMaterialIndex <= -1) { monitorPages[monitorMaterialIndex] = monitorPages[0]; }
     }
 
     public void NextPage()
     {
-        if (monitorPages[monitorMaterialIndex].activeInHierarchy)
+        
+       if (monitorPages[monitorMaterialIndex].activeInHierarchy && monitorMaterialIndex >= 0)
         {
             monitorPages[monitorMaterialIndex].SetActive(false);
             monitorMaterialIndex++;
@@ -33,7 +35,8 @@ public class Monitor : MonoBehaviour
 
     public void BackPage()
     {
-        if (monitorPages[monitorMaterialIndex].activeInHierarchy)
+        
+        if (monitorPages[monitorMaterialIndex].activeInHierarchy && monitorMaterialIndex >= 0)
         {
             monitorPages[monitorMaterialIndex].SetActive(false);
             monitorMaterialIndex--;

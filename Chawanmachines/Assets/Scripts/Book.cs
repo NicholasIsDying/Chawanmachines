@@ -14,6 +14,7 @@ public class book : MonoBehaviour
     private void Start()
     {
         InitialState();
+
     }
 
     public void InitialState()
