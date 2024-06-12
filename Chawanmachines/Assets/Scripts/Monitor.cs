@@ -18,8 +18,8 @@ public class Monitor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Material Index" + monitorMaterialIndex);
-        if (monitorMaterialIndex <= -1) { monitorPages[monitorMaterialIndex] = monitorPages[0]; }
+        //Debug.Log("Material Index" + monitorMaterialIndex);
+
     }
 
     public void NextPage()
