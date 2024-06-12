@@ -6024,6 +6024,10 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6864988850299431231, guid: 4ccfc5ff3b9d80d4bb8476a05935ee42, type: 3}
+      propertyPath: endingScreen
+      value: 
+      objectReference: {fileID: 1037022577}
+    - target: {fileID: 6864988850299431231, guid: 4ccfc5ff3b9d80d4bb8476a05935ee42, type: 3}
       propertyPath: letThroughCount
       value: 
       objectReference: {fileID: 1340416317}
