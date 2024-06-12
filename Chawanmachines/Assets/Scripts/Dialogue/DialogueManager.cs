@@ -72,7 +72,6 @@ public class DialogueManager : MonoBehaviour
 
     private void ReplaceIDs(Dialogue dialogue)
     {
-        print("yes");
         Dictionary<string, string> idPlaceholders = new Dictionary<string, string>();
 
         for (int i = 0; i < dialogue.speakerLines.Count; i++)

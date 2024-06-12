@@ -122,6 +122,7 @@ public class OverallManager : MonoBehaviour
                 GameObject idObject = Instantiate(ID, spawnIDPosition.position, newRotation);
                 ID id = idObject.GetComponent<ID>();
                 idManager.SetWrongId(imposterAs, id);
+
                  newRotation = Quaternion.Euler(Entry.transform.eulerAngles.x, spawnIDPosition.eulerAngles.y, Entry.transform.eulerAngles.z);
                 GameObject entryObject = Instantiate(Entry, spawnEntryPosition.position, newRotation);
                 EntryPaper entry = entryObject.GetComponent<EntryPaper>();
@@ -157,9 +158,15 @@ public class OverallManager : MonoBehaviour
         {
             idManager.isImposter = false;
             int person = Random.Range(0, 14);
+            int counter = 0;
             while (PeopleInAlready.Contains(person))//will randomly
             {
+                if (counter > 50)
+                {
+                    break;
+                }
                 person = Random.Range(0, 14);
+                counter += 1;
             }
             PeopleInAlready.Add(person);
 

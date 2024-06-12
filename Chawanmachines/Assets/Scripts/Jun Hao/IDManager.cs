@@ -35,6 +35,7 @@ public class IDManager : MonoBehaviour
 
     public void SetCorrectId(int random, ID id)
     {
+        print("correct");
         characterIndex = random;
         isThereMistakeOnName = false;
         isThereMistakeOnId = false;
@@ -69,6 +70,7 @@ public class IDManager : MonoBehaviour
     }
     public void SetWrongId(int random, ID id)
     {
+        print("wrong");
         characterIndex = random;
         isThereMistakeOnName = false;
         isThereMistakeOnId = false;
@@ -103,6 +105,7 @@ public class IDManager : MonoBehaviour
         }
         id.expiryDate.text = monthOfId.ToString() + "/" + year.ToString();
 
+        print("f");
 
         //this is to set up the errors
         int amountOfErrors = Random.Range(1, 6);
@@ -128,13 +131,19 @@ public class IDManager : MonoBehaviour
             {
                 id.idPicture.GetComponent<MeshRenderer>().material = correctIdentifcationCards[NotRandom(random, 15)].profilePicture;
             }
-            else if (index[amountOfErrors-1] == 3)
+            else if (index[amountOfErrors-1] == 3)            
             {
                 string supposedPlatoon = correctIdentifcationCards[random].platoonName;
                 platoon = correctIdentifcationCards[NotRandom(random, 15)].platoonName;
+                int indexs = 0;
                 while (supposedPlatoon == platoon)
                 {
-                    platoon = correctIdentifcationCards[NotRandom(random, 15)].platoonName;
+                    platoon = correctIdentifcationCards[indexs  +4 * indexs].platoonName;
+                    indexs += 1;
+                    if (indexs > 2)
+                    {
+                        break;
+                    }
                 }
                 if (platoon == "Lynx")
                 {
@@ -168,17 +177,50 @@ public class IDManager : MonoBehaviour
     int noReptitionLoop(List<int> index, int max)
     {
         int notRandom = 0;
+        int counter = 0;
         while (index.Contains(notRandom))
         {
+            if (counter > 100)
+            {
+                Debug.Log("number of loops exceeded");
+                notRandom = 0;
+                while (index.Contains(notRandom))
+                {
+                    notRandom += 1;
+                    if (notRandom > max - 1)
+                    {
+                        break;
+                    }
+                }
+                break;
+            }
+            print("yes");
             notRandom = Random.Range(0, max);
+            counter += 1;
         }
         return notRandom;
     }
     int NotRandom(int impostingAs, int maxOptions)
     {
         int notRandom=0;
-        while(notRandom ==impostingAs)
+        int counter = 0;
+        while (notRandom ==impostingAs)
         {
+
+            if (counter > 100)
+            {
+                Debug.Log("number of loops exceeded");
+                notRandom = 0;
+                while(notRandom == impostingAs)
+                {
+                    notRandom += 1;
+                    if (notRandom > maxOptions - 1)
+                    {
+                        break;
+                    }
+                }
+                break;
+            }
             notRandom = Random.Range(0, maxOptions);
         }
         return notRandom;
@@ -230,9 +272,15 @@ public class IDManager : MonoBehaviour
             {
                 string platoon = correctIdentifcationCards[NotRandom(impostingAs, 15)].platoonName;
                 string supposedPlatoon= correctIdentifcationCards[impostingAs].platoonName;
+                int indexs = 0;
                 while (supposedPlatoon==platoon)
                 {
-                    supposedPlatoon = correctIdentifcationCards[impostingAs].platoonName;
+                    platoon= correctIdentifcationCards[indexs+4*indexs].platoonName;
+                    indexs += 1;
+                    if (indexs > 2)
+                    {
+                        break;
+                    }
                 }
                 entry.platoonName.text = platoon;
                 if (platoon == "Lynx")
