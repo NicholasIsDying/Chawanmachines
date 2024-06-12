@@ -108,7 +108,7 @@ public class OverallManager : MonoBehaviour
     public void SpawningNextIdEntry()//call this when a new person is supposed to come in 
     {
         int index = Random.Range(0,4);
-        if (index==3)//25% of it being imposter
+        if (index >=2)//25% of it being imposter
         {
             idManager.isImposter = true;
             int imposterAs = Random.Range(0, 14);      

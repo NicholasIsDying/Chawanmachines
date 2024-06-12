@@ -6017,7 +6017,7 @@ PrefabInstance:
       objectReference: {fileID: 16566711}
     - target: {fileID: 6864988850299431231, guid: 4ccfc5ff3b9d80d4bb8476a05935ee42, type: 3}
       propertyPath: numberNpc
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6864988850299431231, guid: 4ccfc5ff3b9d80d4bb8476a05935ee42, type: 3}
       propertyPath: letThroughCount
