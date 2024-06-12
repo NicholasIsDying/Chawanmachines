@@ -76,7 +76,7 @@ public class IDManager : MonoBehaviour
         isThereMistakeOnId = false;
         //this all is just to set up the "Correct" id
         id.name.text = correctIdentifcationCards[random].Name;
-        name = correctIdentifcationCards[random].Name;
+        nameOfIndividual = correctIdentifcationCards[random].Name;
         id.idNumber.text = correctIdentifcationCards[random].iDNumber;
         idOfTheIndividual = correctIdentifcationCards[random].iDNumber;
         id.idPicture.GetComponent<MeshRenderer>().material = correctIdentifcationCards[random].profilePicture;
