@@ -4677,7 +4677,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7338768985500281560, guid: da3b468b35b58334693dfcd04f6e06a7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.04
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8085050572727677009, guid: da3b468b35b58334693dfcd04f6e06a7, type: 3}
       propertyPath: m_IsActive
@@ -6011,6 +6011,10 @@ PrefabInstance:
       propertyPath: killCount
       value: 
       objectReference: {fileID: 16566711}
+    - target: {fileID: 6864988850299431231, guid: 4ccfc5ff3b9d80d4bb8476a05935ee42, type: 3}
+      propertyPath: numberNpc
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 6864988850299431231, guid: 4ccfc5ff3b9d80d4bb8476a05935ee42, type: 3}
       propertyPath: letThroughCount
       value: 

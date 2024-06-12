@@ -25,7 +25,7 @@ public class Monitor : MonoBehaviour
     public void NextPage()
     {
         
-       if (monitorPages[monitorMaterialIndex].activeInHierarchy && monitorMaterialIndex >= 0)
+       if (monitorPages[monitorMaterialIndex].activeInHierarchy && monitorMaterialIndex >= 0 && monitorMaterialIndex <=6)
         {
             monitorPages[monitorMaterialIndex].SetActive(false);
             monitorMaterialIndex++;
@@ -36,7 +36,7 @@ public class Monitor : MonoBehaviour
     public void BackPage()
     {
         
-        if (monitorPages[monitorMaterialIndex].activeInHierarchy && monitorMaterialIndex >= 0)
+        if (monitorPages[monitorMaterialIndex].activeInHierarchy && monitorMaterialIndex >= 1)
         {
             monitorPages[monitorMaterialIndex].SetActive(false);
             monitorMaterialIndex--;
